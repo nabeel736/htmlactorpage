@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+        #quote {
+            font-size: 1.2em;
+            margin-top: 50px;
+        }
+        #generate-btn{
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Quote Generator</h1>
+    <button id="generate-btn">Generate Quote</button>
+    <div id="quote"></div>
+
+    <script>
+        const quotes = ["The greatest glory in living lies not in never falling, but in raising every time flies. -Nelson mendela",
+            "The way to get started is to quit talking and begin doing. - Walt Disney",
+            "The future belongs to those who believe in the beauty to their dreams. -Eleanor Roosevelt"
+        ];
+        const generatebtn =
+        document.getElementById('generate-btn');
+        const quotediv =
+        document.getElementById('quote');
+
+        generatebtn.addEventListener('click',function(){
+            const random = Math.floor(Math.random()*quotes.length);
+            quotediv.textContent = quotes[random];
+        });
+
+    </script>
+
+</body>
+
+</html>
